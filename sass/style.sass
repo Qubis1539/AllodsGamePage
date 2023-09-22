@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@700&display=swap')
+@import _reset
+
+
+
+body
+    font-family: 'Roboto', sans-serif
+    color: white
+.title
+    font-family: 'Roboto Condensed', sans-serif
+    text-transform: uppercase
+    color: white
+.container 
+    max-width: 1920px   
+    padding: 0 40px
+    margin: 0 auto
+
+.section
+    position: relative
+    
+.bg-decor
+    // position: relative
+    // overflow: hidden
+    display: flex
+    justify-content: center
+    height: 100%
+    &__img
+        position: absolute
+        bottom: 0
+        z-index: 3
+        &:first-child
+            // left: -100%
+            animation: showLeft 2s ease-in-out alternate forwards 1 
+        &:last-child
+            animation: showRight 2s ease-in-out alternate forwards 1 
+        &_glow
+            z-index: 4
+            opacity: .5
+            width: 100%
+            bottom: 0
+            mix-blend-mode: hard-light
+
+.preview
+    background: black url("../images/main__bg.png") center center / cover no-repeat
+    position: relative
+    overflow: hidden
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        background: radial-gradient(circle, rgba(255,158,0,0) 0%, rgba(2,0,36,0.7679446778711485) 93%)
+    
+    
+
+    &__content
+        
+        display: flex
+        justify-content: center
+        flex-direction: column
+        align-items: center
+        padding-bottom: 47px    
+    &__text-box
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        position: relative
+        z-index: 8
+    &__title
+        font-size: 42px
+        margin-bottom: 25px
+    &__subtitle
+        font-size: 20px
+.bottom-decorre-line
+    position: relative
+    z-index: 10
+    width: 100%
+    height: 4px
+    background: linear-gradient(90deg, rgba(0,194,255,0) 0%, #008cff 50%, rgba(0,194,255,0) 100%)
+    &_noLine
+        height: 0
+    &::after
+        content: ""
+        position: absolute
+        left: 15%
+        width: 70%
+        height: 172px
+        border-radius: 50%
+        bottom: -86px
+        z-index: 10
+        // box-shadow: 0px 5px 20px 20px #0084ff83
+        background:  rgba(0, 98, 255, 0.452) 
+        filter: blur(120px)
+    &::before
+        content: ""
+        position: absolute
+        width: 80%
+        height: 10px
+        left: 10%
+        z-index: 10
+        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0, 140, 255, 0.802) 50%, rgba(0,0,0,0) 100%)
+        bottom: 0
+        filter: blur(10px)
+.showcase
+    background: #000 url("../images/background wall.png") left center /cover no-repeat
+    overflow: hidden
+    &__content
+        padding-top: 62px
+        padding-bottom: 50px
+        display: flex
+        justify-content: space-evenly
+        align-items: center    
+    &__title
+        color: #416DF4
+        font-size: 30px
+    &__img
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        z-index: 10
+        img
+            max-width: 550px    
+            position: relative
+            z-index: 20
+        &::before
+            content: ""
+            position: absolute  
+            width: 680px
+            height: 680px
+            border-radius: 686px
+            border: 1px solid #000
+            opacity: 0.2
+            background: #416DF4
+            mix-blend-mode: lighten
+            filter: blur(100px)
+            z-index: 5  
+                
+
+.package
+    padding: 30px 0
+    display: flex
+    flex-direction: column
+    gap: 1px
+    &__top
+        display: flex
+        align-items: center
+        justify-content: end
+        gap: 10px
+        padding-bottom: 8px
+    &__title-desc
+        padding: 4px
+        border: 1px solid rgba(103, 29, 0, 0.48)
+        background: rgba(0, 0, 0, 0.55)
+        width: 140px
+        color: #671D00
+        text-align: center
+        font-size: 12px
+    &__item
+        padding: 5px
+        font-size: 16px
+        border: 1px solid rgba(103, 29, 0, 0.48)
+        background: rgba(0, 0, 0, 0.55)
+        display: flex
+        align-items: center
+        justify-content: space-between
+        position: relative
+        right: 0
+        transition: right .3s ease-in-out
+        &:hover
+            right: 20px
+    &__desc
+        display: flex
+        align-items: center
+        gap: 20px
+        flex-grow: 1
+        max-width: 229px
+    &__contain
+        width: 140px
+        display: flex
+        justify-content: center
+        align-items: center
+
+.card
+    display: flex
+    align-items: end
+    gap: 35px
+    &__img
+        max-width: 250px
+        transition: transform .5s ease-in-out
+        &:hover
+            transform: scale(1.1)
+    &__info
+        display: flex
+        flex-direction: column
+        gap: 30px
+        padding-bottom: 30px
+    &__price
+        font-size: 50px
+    &__button
+        padding: 10px 37px
+        border-radius: 7px
+        background: #FCFF00
+        text-align: center
+        color: black    
+        font-size: 16px
+        &:hover
+            background: #babd00
+            
+
+@keyframes blink
+    0%
+        opacity: 0.2
+    
+    100%
+        opacity: 0.1
+        
+@keyframes showLeft
+    0%
+        left: -100%
+    100%
+        left: 0
+@keyframes showRight
+    0%
+        right: -100%
+    100%
+        right: 0
